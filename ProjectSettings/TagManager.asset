@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - ComputerUI
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 1260513979
+    locked: 0
+  - name: Items
+    uniqueID: 2827557099
     locked: 0
   - name: Player
     uniqueID: 1995685769
