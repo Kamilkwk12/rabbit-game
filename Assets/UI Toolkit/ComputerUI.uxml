@@ -1,0 +1,13 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/ComputerStyleSheet.uss?fileID=7433441132597879392&amp;guid=262b3f7156b974f49bd5ef8887737b49&amp;type=3#ComputerStyleSheet" />
+    <engine:VisualElement style="flex-grow: 1; width: 50%; right: -50%;">
+        <engine:VisualElement name="ComputerScreen" class="computerScreen" style="background-color: rgb(27, 24, 34); height: 100%;">
+            <engine:VisualElement name="Window" style="width: 600px; height: 600px; background-color: rgb(101, 101, 101); position: absolute; top: 0; left: 0;">
+                <engine:VisualElement name="WindowBar" style="height: 53px; background-color: rgba(0, 0, 0, 0.74); position: relative;" />
+                <engine:Label text="Objects Name" name="ObjectName" style="font-size: 38px; color: rgb(255, 255, 255); padding-left: 40px; flex-grow: 1;" />
+                <engine:Label text="Descritpion" name="Description" style="font-size: 38px; color: rgb(255, 255, 255); padding-left: 40px; height: 167px; flex-grow: 1;" />
+                <engine:Label text="Source code" name="SourceCode" style="font-size: 38px; color: rgb(255, 255, 255); padding-left: 40px; height: auto; flex-grow: 1;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
