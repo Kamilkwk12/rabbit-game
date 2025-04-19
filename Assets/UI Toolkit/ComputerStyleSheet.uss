@@ -1,9 +1,15 @@
-.header {
-}
-
 .computerScreen {
     background-color: rgb(82, 22, 22);
 }
 
-.header {
+.taskbarButton {
+    width: 188px;
+    height: 58px;
+    font-size: 27px;
+}
+
+.windowBar {
+}
+
+.windowCloseButton {
 }
