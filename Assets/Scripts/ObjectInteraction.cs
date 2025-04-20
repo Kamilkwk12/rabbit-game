@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class ObjectInteraction : MonoBehaviour
 {
 
-    public ComputerUIScript Computer;
+    private ComputerUIScript _computer;
 
     [SerializeField] private TextMeshProUGUI _interactionText;
 
@@ -18,16 +18,19 @@ public class ObjectInteraction : MonoBehaviour
 
     void Awake()
     {
+        _computer = GameObject.FindGameObjectWithTag("ComputerUI").GetComponent<ComputerUIScript>();
+
         _interactionText.enabled = false;
         _interactionAction = InputSystem.actions.FindAction("Interaction");
     }
+
 
     void Update()
     { 
         if (_canBeInteracted && _interactionAction.WasPressedThisFrame())
         {
             Debug.Log("Pressed E - interaction occurs");
-            Computer.OpenWindow();
+            _computer.OpenWindow();
         }
     }
 

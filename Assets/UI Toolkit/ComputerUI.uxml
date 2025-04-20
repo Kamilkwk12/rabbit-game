@@ -1,19 +1,13 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/ComputerStyleSheet.uss?fileID=7433441132597879392&amp;guid=262b3f7156b974f49bd5ef8887737b49&amp;type=3#ComputerStyleSheet" />
-    <engine:VisualElement name="Container" style="flex-grow: 1; width: 50%; right: -50%;">
-        <engine:VisualElement name="ComputerScreen" class="computerScreen" style="background-color: rgb(27, 24, 34); height: 100%;">
-            <engine:VisualElement name="TaskBar" style="height: 100px; background-color: rgb(0, 0, 0); flex-direction: row; align-content: flex-start; align-items: center; justify-content: space-around;">
-                <engine:Button text="Home" name="Home" class="taskbarButton" />
-                <engine:Button text="Settings" name="Settings" class="taskbarButton" />
-                <engine:Button text="Exit" name="Exit" class="taskbarButton" />
+    <engine:VisualElement name="ComputerScreen" class="computerScreen" style="background-color: rgb(27, 24, 34); height: 100%; width: 50%; right: auto; align-self: flex-end;">
+        <engine:VisualElement name="TaskBar" style="height: 100px; background-color: rgb(0, 0, 0); flex-direction: row; align-content: flex-start; align-items: center; justify-content: space-around;" />
+        <engine:VisualElement name="NoteWindow" enabled="true" style="flex-grow: 1; background-color: rgb(19, 19, 19); display: none;">
+            <engine:VisualElement name="WindowBar" class="windowBar" style="background-color: rgb(36, 36, 36); height: 40px; justify-content: center;">
+                <engine:Button text="X&#10;" name="WindowCloseButton" class="windowCloseButton" style="width: 30px; height: 30px; align-self: flex-end; justify-content: flex-start; align-items: auto; margin-top: 0; margin-left: 0; margin-right: 5px; margin-bottom: 0; align-content: flex-start; flex-direction: column; flex-wrap: nowrap;" />
             </engine:VisualElement>
-            <engine:VisualElement name="NoteWindow" enabled="true" style="flex-grow: 1; background-color: rgb(19, 19, 19); display: none;">
-                <engine:VisualElement name="WindowBar" class="windowBar" style="background-color: rgb(36, 36, 36); height: 40px; justify-content: center;">
-                    <engine:Button text="X&#10;" name="WindowCloseButton" class="windowCloseButton" style="width: 30px; height: 30px; align-self: flex-end; justify-content: flex-start; align-items: auto; margin-top: 0; margin-left: 0; margin-right: 5px; margin-bottom: 0; align-content: flex-start; flex-direction: column; flex-wrap: nowrap;" />
-                </engine:VisualElement>
-                <engine:VisualElement name="NoteWindowContent" style="flex-grow: 1;">
-                    <engine:Label text="Placeholder" name="Text" style="font-size: 44px; color: rgb(255, 255, 255);" />
-                </engine:VisualElement>
+            <engine:VisualElement name="NoteWindowContent" style="flex-grow: 1;">
+                <engine:Label text="Placeholder" name="Text" style="font-size: 44px; color: rgb(255, 255, 255);" />
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

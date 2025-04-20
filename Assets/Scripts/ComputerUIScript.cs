@@ -24,6 +24,7 @@ public class ComputerUIScript : MonoBehaviour
     }
     private void CloseWindow(ClickEvent evt)
     {
+        Debug.Log("Window closed");
         _noteWindow.style.display = DisplayStyle.None;
     }
 
