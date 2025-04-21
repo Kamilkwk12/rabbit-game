@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameUIScript : MonoBehaviour
+public class GameUI : MonoBehaviour
 {
 
     private UIDocument _document;

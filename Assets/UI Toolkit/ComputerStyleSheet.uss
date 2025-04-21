@@ -2,14 +2,22 @@
     background-color: rgb(82, 22, 22);
 }
 
-.taskbarButton {
-    width: 188px;
-    height: 58px;
-    font-size: 27px;
+.terminalText {
+    color: rgb(255, 255, 255);
+    font-size: 31px;
 }
 
 .windowBar {
 }
 
-.windowCloseButton {
+.desktopIcon {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    margin-left: 33px;
+    margin-top: 30px;
+    background-color: rgb(17, 15, 21);
+    margin-bottom: 30px;
 }
