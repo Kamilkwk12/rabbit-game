@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ComputerUI
   - GameUI
+  - Item
+  - Object
   layers:
   - Default
   - TransparentFX

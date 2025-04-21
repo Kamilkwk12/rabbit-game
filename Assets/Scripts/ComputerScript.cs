@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ComputerUIScript : MonoBehaviour
+public class ComputerScript : MonoBehaviour
 {
 
     private UIDocument _document;
     private VisualElement _noteWindow;
     private Button _windowCloseButton;
+
 
     private void Awake()
     {
@@ -28,8 +29,20 @@ public class ComputerUIScript : MonoBehaviour
         _noteWindow.style.display = DisplayStyle.None;
     }
 
-    public void OpenWindow()
+    private void OpenWindow()
     {
         _noteWindow.style.display = DisplayStyle.Flex;
+    }
+
+    public void Action(GameObject _interactedObject)
+    {
+        if (_interactedObject.CompareTag("Item"))
+        {
+            Debug.Log($"Player interacted with {_interactedObject.name}");
+            OpenWindow();
+        } else if (_interactedObject.CompareTag("Object"))
+        {
+            Debug.Log($"Player opened {_interactedObject.name}");
+        }
     }
 }
