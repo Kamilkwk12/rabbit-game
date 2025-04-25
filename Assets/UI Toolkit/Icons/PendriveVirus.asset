@@ -15,3 +15,6 @@ MonoBehaviour:
   IconName: unknown.exe
   IconSprite: {fileID: -1243892369805425323, guid: 6073674451838854992b51c8cd5d480e, type: 3}
   Content: 
+  ErrorMessage: "B\u0142\u0105d: Nie mo\u017Cna otworzy\u0107 pliku, poniewa\u017C
+    wyst\u0119puj\u0105 problemy z jego zawatro\u015Bci\u0105. \n\nPlik jest uszkodzony
+    lub nieobs\u0142ugiwany. "

@@ -8,6 +8,7 @@ TagManager:
   - GameUI
   - Item
   - Object
+  - GameManager
   layers:
   - Default
   - TransparentFX

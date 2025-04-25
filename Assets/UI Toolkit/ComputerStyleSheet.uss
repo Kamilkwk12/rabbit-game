@@ -21,3 +21,10 @@
     background-color: rgb(17, 15, 21);
     margin-bottom: 30px;
 }
+
+.windowText {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-left;
+    white-space: normal;
+}
