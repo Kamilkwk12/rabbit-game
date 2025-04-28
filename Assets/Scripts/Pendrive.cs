@@ -16,7 +16,7 @@ public class Pendrive : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return !_gameManager.isPendrivePickedUp;
+        return !_gameManager.pendrivePickedUp;
     }
 
     public void Interact()

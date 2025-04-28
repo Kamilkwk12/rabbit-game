@@ -3,7 +3,7 @@
     <engine:VisualElement name="ComputerScreen" class="computerScreen" style="background-color: rgb(27, 24, 34); height: 100%; width: 50%; right: auto; align-self: flex-end;">
         <engine:VisualElement name="TaskBar" style="height: 40px; background-color: rgb(0, 0, 0); flex-direction: row; align-content: flex-start; align-items: center; justify-content: space-around;" />
         <engine:VisualElement name="Desktop" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;" />
-        <engine:VisualElement name="Terminal" style="flex-grow: 0; background-color: rgb(0, 0, 0); height: 30%; position: absolute; bottom: 0; right: 0; left: 0; display: flex;">
+        <engine:VisualElement name="Terminal" style="flex-grow: 0; background-color: rgb(0, 0, 0); height: 30%; position: relative; bottom: auto; right: auto; left: auto; display: flex;">
             <engine:VisualElement name="WindowBar" class="windowBar" style="flex-grow: 0; height: 30px; flex-direction: column; justify-content: center; background-color: rgb(34, 34, 34);">
                 <engine:Button text="X&#10;" name="WindowCloseButton" style="align-self: flex-end; width: 20px; height: 20px;" />
             </engine:VisualElement>

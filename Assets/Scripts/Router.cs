@@ -21,22 +21,28 @@ public class Router : MonoBehaviour, IInteractable
     {
         if (CanInteract())
         {
-            if (!_gameManager.isPendrivePickedUp && !_gameManager.isPendrivePluggedToRouter)
+            if (_gameManager.pendrivePluggedToRouter)
+            {
+                _gameManager.ChangeGameState();
+                _computer.TerminalLog("Game state changed");
+
+            }
+
+            if (!_gameManager.pendrivePickedUp && !_gameManager.pendrivePluggedToRouter)
             {
                 Debug.Log("PLayer cannot interact with router - access denied");
             }
-            if ( _gameManager.isPendrivePickedUp && !_gameManager.isPendrivePluggedToRouter)
+
+            if ( _gameManager.pendrivePickedUp && !_gameManager.pendrivePluggedToRouter)
             {
                 _gameManager.UsePendrive();
                 _computer.RemoveIcon("readme.txt");
                 _computer.RemoveIcon("unknown.exe");
-            }
-            if ( _gameManager.isPendrivePluggedToRouter)
-            {   
-                Debug.Log("Good job");
-            }
+                _computer.TerminalLog("Pendrive disconnected");
+                _computer.TerminalLog("Access to the router gained");
 
-
+                //open router minigame ??
+            }
         }
 
     }

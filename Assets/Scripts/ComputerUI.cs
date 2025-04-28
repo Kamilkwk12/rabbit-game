@@ -6,15 +6,16 @@ using UnityEngine.UIElements;
 
 public class ComputerUI : MonoBehaviour
 {
-    enum WindowType
+    public enum WindowType
     {
         Error, 
-        TextFile
+        EditWindow
     }
 
     private UIDocument _document;
     public VisualTreeAsset IconTemplate;
     public VisualTreeAsset ErrorTemplate;
+    public VisualTreeAsset EditWindowTemplate;
     private Label _terminalLog;
     private VisualElement _terminalWindow;
     private Button _terminalCloseButton;
@@ -90,25 +91,33 @@ public class ComputerUI : MonoBehaviour
     {
         _terminalLog.text = _terminalLog.text + Environment.NewLine + logText;
     }
-    private void OpenWindow(WindowType windowType) //create window with given type
+    public void OpenWindow(WindowType windowType, EditableObjectScript target = null) //create window with given type
     {
+        VisualElement window = new();
         if (windowType == WindowType.Error) { 
-            VisualElement window = ErrorTemplate.Instantiate();
-            window.style.position = Position.Absolute;
-            window.Q<Button>("WindowCloseButton").RegisterCallback<ClickEvent>((context) =>
+             window = ErrorTemplate.Instantiate();
+        }
+        if (windowType == WindowType.EditWindow && target) {
+            window = EditWindowTemplate.Instantiate();
+            Toggle toggle = window.Q<Toggle>();
+            toggle.value = target.isActive;
+            toggle.RegisterCallback<ClickEvent>((context) =>
             {
-                window.RemoveFromHierarchy();
+                target.isActive = toggle.value;
             });
-
-            _document.rootVisualElement.Q<VisualElement>("ComputerScreen").Add(window);
         }
 
-        if (windowType == WindowType.TextFile)
+        window.style.position = Position.Absolute;
+        window.Q<Button>("WindowCloseButton").RegisterCallback<ClickEvent>((context) =>
         {
-            Debug.Log("Otwarto plik tekstowy");
-        }
+            window.RemoveFromHierarchy();
+        });
+
+        _document.rootVisualElement.Q<VisualElement>("ComputerScreen").Add(window);
+
+            
     }
-    private void OpenWindow(VisualElement target) //show window from hierarchy
+    public void OpenWindow(VisualElement target) //show window from hierarchy
     {
         target.style.display = DisplayStyle.Flex;
     }
