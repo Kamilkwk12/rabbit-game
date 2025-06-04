@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class ComputerUI : MonoBehaviour
@@ -12,6 +13,8 @@ public class ComputerUI : MonoBehaviour
         EditWindow
     }
 
+    private GameManager gameManager;
+
     private UIDocument _document;
     public VisualTreeAsset IconTemplate;
     public VisualTreeAsset ErrorTemplate;
@@ -20,27 +23,33 @@ public class ComputerUI : MonoBehaviour
     private VisualElement _terminalWindow;
     private Button _terminalCloseButton;
 
+    public TextField _terminalInput;
+
     public DesktopIcon[] DefaultDesktopIcons; //all desktop icons to add on awake
     private void Awake()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _document = GetComponent<UIDocument>();
 
         _terminalWindow = _document.rootVisualElement.Q<VisualElement>("Terminal");
         _terminalLog = _document.rootVisualElement.Q<Label>("TerminalLog");
         _terminalLog.text = "rabbit@rabbit ~ $ system init";
+        _terminalInput = _document.rootVisualElement.Q<TextField>("TerminalInput");
 
         _terminalCloseButton = _terminalWindow.Q<Button>();
         _terminalCloseButton.RegisterCallback<ClickEvent, VisualElement>(CloseWindow, _terminalWindow);
 
-
+        _terminalInput.RegisterCallback<KeyDownEvent, TextField>(ExecuteCommand, _terminalInput, TrickleDown.TrickleDown);
+        _terminalInput.RegisterCallback<ClickEvent>((evt) =>
+        {
+            _terminalInput.Focus();
+        });
 
         for (int i = 0; i < DefaultDesktopIcons.Length; i++) //adds all default desktop icons
         {
             AddDesktopIcon(DefaultDesktopIcons[i]);
         }
     }
-
-    
 
     private void OnDisable()
     {
@@ -52,6 +61,8 @@ public class ComputerUI : MonoBehaviour
             icon.UnregisterCallback<ClickEvent, DesktopIcon>(IconClick);
         }
     }
+
+
 
     public void AddDesktopIcon(DesktopIcon iconData)
     {
@@ -86,12 +97,48 @@ public class ComputerUI : MonoBehaviour
                 break;
         }
     }
+    private void ExecuteCommand(KeyDownEvent evt, TextField terminalInput)
+    {
+        if (evt.keyCode == KeyCode.Return) { 
+            string command = terminalInput.text;
+            terminalInput.SetValueWithoutNotify("");
+            TerminalLog("> " + command);
+            ChceckForCommands(command);
+            terminalInput.Blur();
+            evt.StopPropagation();
+        }
+    }
+
+    public void ChceckForCommands(string executedString)
+    {
+        switch (executedString)
+        {
+            case "exit":
+                CloseWindow(_terminalWindow);
+                break;
+
+            case "objects show /a":
+                if (gameManager.virtualStateActive)
+                {
+                    gameManager.ActivateAllObjects();
+                    TerminalLog("Aktywowano wszystkie obiekty");
+                } else
+                {
+                    TerminalLog($"Nie rozpoznano komendy '{executedString}'");
+                }
+                break;
+            default:
+                TerminalLog($"Nie rozpoznano komendy '{executedString}'");
+                break;
+        }
+    }
+
 
     public void TerminalLog(string logText) //log something in computers terminal
     {
         _terminalLog.text = _terminalLog.text + Environment.NewLine + logText;
     }
-    public void OpenWindow(WindowType windowType, EditableObjectScript target = null) //create window with given type
+    public void OpenWindow(WindowType windowType, EditableObject target = null) //create window with given type
     {
         VisualElement window = new();
         if (windowType == WindowType.Error) { 
@@ -120,6 +167,9 @@ public class ComputerUI : MonoBehaviour
     public void OpenWindow(VisualElement target) //show window from hierarchy
     {
         target.style.display = DisplayStyle.Flex;
+    }public void CloseWindow(VisualElement target) //show window from hierarchy
+    {
+        target.style.display = DisplayStyle.None;
     }
     private void CloseWindow(ClickEvent evt, VisualElement currentTarget) //hide window, dont remove it from hierarchy
     {

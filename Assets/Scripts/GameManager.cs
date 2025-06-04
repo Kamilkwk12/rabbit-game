@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,11 +11,14 @@ public class GameManager : MonoBehaviour
     
     public SpriteRenderer Background;
 
-    private List<GameObject> editableObjects;
+    private List<GameObject> objects;
+    private List<EditableObject> editableObjects;
 
     private void Start()
     {
-        editableObjects = GameObject.FindGameObjectsWithTag("Object").ToList();
+        //search for all editable objects
+        objects = GameObject.FindGameObjectsWithTag("Object").ToList();
+        editableObjects = FindObjectsByType<EditableObject>(FindObjectsSortMode.None).ToList();
     }
 
     void Update()
@@ -23,8 +27,6 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
-
-        
     }
 
     public void PendrivePickedUp()
@@ -50,9 +52,8 @@ public class GameManager : MonoBehaviour
 
             foreach (var obj in editableObjects)
             {
+                obj.Activate();
                 obj.GetComponent<SpriteRenderer>().color = Color.red;
-                obj.GetComponent<SpriteRenderer>().enabled = true;
-                obj.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
         else
@@ -60,13 +61,20 @@ public class GameManager : MonoBehaviour
             Background.color = Color.gray;
             foreach (var obj in editableObjects)
             {
-                obj.GetComponent<SpriteRenderer>().color = Color.white;
-                if (!obj.GetComponent<EditableObjectScript>().isActive)
+                obj.Activate();
+                if (!obj.isActive)
                 {
-                    obj.GetComponent<SpriteRenderer>().enabled = false;
-                    obj.GetComponent<BoxCollider2D>().enabled = false;
+                    obj.Deactivate();
                 }
             }
+        }
+    }
+
+    public void ActivateAllObjects()
+    {
+        foreach (var obj in editableObjects)
+        {
+            obj.isActive = true;
         }
     }
 }

@@ -7,11 +7,14 @@
             <engine:VisualElement name="WindowBar" class="windowBar" style="flex-grow: 0; height: 30px; flex-direction: column; justify-content: center; background-color: rgb(34, 34, 34);">
                 <engine:Button text="X&#10;" name="WindowCloseButton" style="align-self: flex-end; width: 20px; height: 20px;" />
             </engine:VisualElement>
-            <engine:ScrollView name="TerminalLog" style="flex-grow: 1; max-height: 80%; max-width: 960px;">
+            <engine:ScrollView name="TerminalLog" style="flex-grow: 1; max-width: 960px; min-height: 75%; max-height: 247px;">
                 <engine:Label text="~Terminal TextLog" name="TerminalLog" class="terminalText" style="white-space: normal; max-width: 910px;" />
             </engine:ScrollView>
-            <engine:VisualElement name="TerminalInput" style="flex-grow: 0; height: 40px; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-left-color: rgb(58, 58, 58); border-right-color: rgb(58, 58, 58); border-top-color: rgb(58, 58, 58); border-bottom-color: rgb(58, 58, 58);">
-                <engine:Label text="localhost//" name="SampleInput" style="color: rgb(255, 255, 255);" />
+            <engine:VisualElement name="TerminalInputContainer" style="flex-grow: 1; flex-direction: row;">
+                <engine:VisualElement name="InputCharacter" style="flex-grow: 0; width: 55px;">
+                    <engine:Label text="&gt;" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 38px; max-height: 42px;" />
+                </engine:VisualElement>
+                <engine:TextField name="TerminalInput" enabled="true" emoji-fallback-support="false" hide-placeholder-on-focus="false" select-line-by-triple-click="false" select-word-by-double-click="false" select-all-on-focus="false" select-all-on-mouse-up="false" hide-mobile-input="true" class="unity-text-field unity-text-field__input" style="height: 42px; margin-left: 0; flex-grow: 1; -unity-text-outline-color: rgba(0, 0, 0, 0.25);" />
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

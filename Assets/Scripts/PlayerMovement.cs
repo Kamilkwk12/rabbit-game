@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField] private float moveSpeed = 5f;
+    public ComputerUI computerUI;
+
+    [SerializeField] private float moveSpeed = 1.5f;
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
 
@@ -24,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+
+        if (computerUI._terminalInput.panel.focusController.focusedElement == computerUI._terminalInput)
+        {
+            return;
+        }
+
         _moveInput = context.ReadValue<Vector2>();
 
         if (_moveInput == Vector2.zero) {

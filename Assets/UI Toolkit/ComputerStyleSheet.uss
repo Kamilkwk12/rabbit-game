@@ -28,3 +28,15 @@
     -unity-text-align: middle-left;
     white-space: normal;
 }
+
+.unity-text-field__input {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    border-left-color: rgba(154, 154, 154, 0.25);
+    border-right-color: rgba(154, 154, 154, 0.25);
+    border-top-color: rgba(154, 154, 154, 0.25);
+    border-bottom-color: rgba(154, 154, 154, 0.25);
+    font-size: 23px;
+    -unity-text-align: middle-left;
+}
