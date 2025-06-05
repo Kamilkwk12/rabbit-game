@@ -1134,6 +1134,53 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1155551788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1155551790}
+  - component: {fileID: 1155551789}
+  m_Layer: 0
+  m_Name: Kuba
+  m_TagString: Kuba
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1155551789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155551788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7e2702cc05cb4ca1d102adc177991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typingSpeed: 0.1
+  kubaDialogues:
+  - {fileID: 11400000, guid: 478e756452b24074f8dc9e512d120bea, type: 2}
+--- !u!4 &1155551790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155551788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.28538, y: -0.31921816, z: -0.01201208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196515512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1877,7 @@ GameObject:
   - component: {fileID: 1946035011}
   - component: {fileID: 1946035013}
   - component: {fileID: 1946035014}
+  - component: {fileID: 1946035015}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -1895,6 +1943,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Background: {fileID: 2024655177}
+--- !u!114 &1946035015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946035009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37818006f3e106348893392a81806398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questUITemplate: {fileID: 9197481963319205126, guid: 08c1d6cc371240a468faf4b1e0be09f9, type: 3}
+  questList:
+  - {fileID: 11400000, guid: 006383b3e11bc3d4e94c92039b06026a, type: 2}
+  currentQuest: {fileID: 0}
 --- !u!1 &1957607497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2265,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1946035011}
+  - {fileID: 1155551790}
   - {fileID: 1206653570}
   - {fileID: 619394802}
   - {fileID: 519420032}

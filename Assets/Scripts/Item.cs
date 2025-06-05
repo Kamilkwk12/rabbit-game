@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Item : MonoBehaviour, IInteractable
 {
     private bool isDialogueActive = false, isTyping;
-    public ItemDataSO itemData;
+    public ItemData itemData;
     private UIDocument gameUI;
     public VisualTreeAsset dialogueUITemplate;
     private VisualElement dialogueWindow;

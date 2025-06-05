@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "InteractionDialogue", menuName = "Scriptable Objects/InteractionDialogue")]
-public class ItemDataSO : ScriptableObject
+public class ItemData : ScriptableObject
 {
     public string itemName; 
     public string itemDescription;
