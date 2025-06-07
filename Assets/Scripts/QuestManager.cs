@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
 public class QuestManager : MonoBehaviour
@@ -11,26 +9,25 @@ public class QuestManager : MonoBehaviour
 
     public Quest[] questList;
     private UIDocument gameUi; 
-    private VisualElement questUi;
     public Quest currentQuest;
+    
+
+    [SerializeField] private Canvas questUi;
+
+    [SerializeField] private TextMeshProUGUI questTitle;
+    [SerializeField] private TextMeshProUGUI questInfo;
+
     private void Start()
     {
-
-        gameUi = GameObject.FindGameObjectWithTag("GameUI").GetComponent<UIDocument>();
-        questUi = questUITemplate.Instantiate().Children().FirstOrDefault();
-        questUi.style.display = DisplayStyle.None;
-        gameUi.rootVisualElement.Q("GameUI").Add(questUi);
-        questUi = gameUi.rootVisualElement.Q("QuestContainer");
-
         StartQuest(0);
-
     }
 
     public void StartQuest(int questID)
     {
-        foreach (Quest quest in questList)
-        { //deactivate all quests
+        foreach (Quest quest in questList) //deactivate all quests DEBUG !!!!!!!!!!
+        { 
             quest.isQuestActive = false;
+            quest.isQuestCompleted = false;
         }
 
         currentQuest = questList[questID];
@@ -39,9 +36,11 @@ public class QuestManager : MonoBehaviour
         {
             currentQuest.isQuestActive = true;
 
-            questUi.Q<Label>("QuestName").text = currentQuest.questName;
-            questUi.Q<Label>("QuestDescription").text = currentQuest.questDescription;
-            questUi.style.display = DisplayStyle.Flex;
+
+            questTitle.text = currentQuest.questName;
+            questInfo.text = currentQuest.questDescription;
+            questUi.enabled = true;
+
         }
         else return;
     }
@@ -52,10 +51,7 @@ public class QuestManager : MonoBehaviour
         {
             currentQuest.isQuestCompleted = true;
 
-            questUi.style.display = DisplayStyle.None;
-            questUi.Q<Label>("QuestName").text = "";
-            questUi.Q<Label>("QuestDescription").text = "";
-
+            questUi.enabled = false;
         }
     }
 }

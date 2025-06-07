@@ -27,11 +27,6 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
 
-        if (computerUI._terminalInput.panel.focusController.focusedElement == computerUI._terminalInput)
-        {
-            return;
-        }
-
         _moveInput = context.ReadValue<Vector2>();
 
         if (_moveInput == Vector2.zero) {

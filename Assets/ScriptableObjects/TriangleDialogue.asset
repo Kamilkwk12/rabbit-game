@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb80d55a1e39044784bd348309afbc1, type: 3}
-  m_Name: KubaStart
+  m_Script: {fileID: 11500000, guid: 2895041e538fdb846b1c975e53a178f3, type: 3}
+  m_Name: TriangleDialogue
   m_EditorClassIdentifier: 
-  DialogueLines:
-  - Hello Rabbit, lets start a new day together.
+  dialogueType: 1
+  dialogueLines:
+  - Whoa...
+  - Amazing triangle!

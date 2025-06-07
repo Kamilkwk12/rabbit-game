@@ -6,8 +6,12 @@ public class InteractionDetector : MonoBehaviour
 
     public IInteractable _interactableInRange; //closest interactable
 
+    private DialogueSystem dialogueSystem;
+
     private void Start()
     {
+        dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
+
         _interactableInRange = null;
     }
 
@@ -33,12 +37,11 @@ public class InteractionDetector : MonoBehaviour
 
         if (collision.TryGetComponent(out IInteractable interactable) && _interactableInRange == interactable)
         {
-            if (collision.GetComponent<Item>())
+            if (dialogueSystem.isDialogueActive)
             {
-                collision.GetComponent<Item>().EndDialogue();
+                dialogueSystem.EndDialogue();
             }
-
-            _interactableInRange = null;
+           _interactableInRange = null;
         }
     }
 }
