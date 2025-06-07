@@ -2,12 +2,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class DialogueSystem : MonoBehaviour
+public class DialogueSystem : MonoBehaviour 
 {
 
     [SerializeField] private Canvas dialogueBox;
-    [SerializeField] private TextMeshProUGUI dialogueTitle;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI dialogueBoxTitle;
+    [SerializeField] private TextMeshProUGUI dialogueContent;
 
     public bool isDialogueActive;
     private int dialogueIndex;
@@ -21,21 +21,25 @@ public class DialogueSystem : MonoBehaviour
     public void StartDialogue(Dialogue dialogueInput)
     {
         currentDialogue = dialogueInput;
+
         isDialogueActive = true;
         dialogueIndex = 0;
-        dialogueBox.enabled = true;
+        if (dialogueBox) { 
+            dialogueBox.enabled = true;
+        }
 
         StartCoroutine(TypeLine());
+
     }
      
     IEnumerator TypeLine()
     {
         isTyping = true;
-        dialogueText.text = string.Empty;
+        dialogueContent.text = string.Empty;
 
         foreach (char letter in currentDialogue.dialogueLines[dialogueIndex])
         {
-            dialogueText.text += letter;
+            dialogueContent.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -48,7 +52,7 @@ public class DialogueSystem : MonoBehaviour
         {
             //skip typin animation and show full line
             StopAllCoroutines();
-            dialogueText.text = currentDialogue.dialogueLines[dialogueIndex].ToString();
+            dialogueContent.text = currentDialogue.dialogueLines[dialogueIndex].ToString();
             isTyping = false;
         }
         else if (++dialogueIndex < currentDialogue.dialogueLines.Length)
@@ -67,7 +71,9 @@ public class DialogueSystem : MonoBehaviour
     {
         StopAllCoroutines();
         isDialogueActive = false;
-        dialogueBox.enabled = false;
-        dialogueText.text = string.Empty;
+        if (dialogueBox && dialogueContent) { 
+            dialogueBox.enabled = false;
+            dialogueContent.text = string.Empty;
+        }
     }
 }

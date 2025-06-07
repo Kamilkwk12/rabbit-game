@@ -48,7 +48,6 @@ public class Router : MonoBehaviour, IInteractable
                 questManager.EndQuest(0);
 
                 kuba.StopAllCoroutines();
-                kuba.StartCoroutine(kuba.TypeLine(Kuba.KubaDialogueType.QuestCompleted, 0));
             }
         }
 

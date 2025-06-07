@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Item : MonoBehaviour, IInteractable
 {
@@ -11,33 +8,30 @@ public class Item : MonoBehaviour, IInteractable
     public Dialogue dialogue;
     private PlayerMovement player;
 
-    private DialogueSystem DialogueSystem;
+    private DialogueSystem dialogueSystem;
 
     private void Start()
     {
-        DialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
+        dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     public bool CanInteract()
     {
-        return !DialogueSystem.isDialogueActive;
+        return !dialogueSystem.isDialogueActive;
 
     }
 
     public void Interact()
     {
 
-        if (DialogueSystem.isDialogueActive)
+        if (dialogueSystem.isDialogueActive)
         {
-            DialogueSystem.NextLine();
+            dialogueSystem.NextLine();
         }
         else
         {
-            DialogueSystem.StartDialogue(dialogue);
+            dialogueSystem.StartDialogue(dialogue);
         }
-
     }
-
-    
 }

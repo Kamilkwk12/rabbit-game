@@ -3159,13 +3159,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1155551790}
   - component: {fileID: 1155551789}
+  - component: {fileID: 1155551791}
   m_Layer: 0
   m_Name: Kuba
   m_TagString: Kuba
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1155551789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,9 +3179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca7e2702cc05cb4ca1d102adc177991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.1
-  kubaDialogues:
-  - {fileID: 11400000, guid: 478e756452b24074f8dc9e512d120bea, type: 2}
+  dialogue: {fileID: 11400000, guid: eb917777461008b46bc022c7c0ea3443, type: 2}
 --- !u!4 &1155551790
 Transform:
   m_ObjectHideFlags: 0
@@ -3196,6 +3195,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1155551791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155551788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e183584773407504496d3c69d553e82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+  dialogueBoxTitle: {fileID: 0}
+  dialogueContent: {fileID: 1600758827}
+  isDialogueActive: 0
+  currentDialogue: {fileID: 0}
+  typingSpeed: 0.1
 --- !u!1 &1196515512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4132,7 @@ GameObject:
   - component: {fileID: 1761735791}
   - component: {fileID: 1761735790}
   m_Layer: 5
-  m_Name: Dialogue Text
+  m_Name: Dialogue Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4681,8 +4698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1055618084}
-  dialogueTitle: {fileID: 413177226}
-  dialogueText: {fileID: 1761735790}
+  dialogueBoxTitle: {fileID: 413177226}
+  dialogueContent: {fileID: 1761735790}
   isDialogueActive: 0
   currentDialogue: {fileID: 0}
   typingSpeed: 0.1
@@ -4894,9 +4911,10 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1206653570}
   - {fileID: 1946035011}
   - {fileID: 1155551790}
-  - {fileID: 1206653570}
+  - {fileID: 395561888}
   - {fileID: 619394802}
   - {fileID: 519420032}
   - {fileID: 1196515514}
@@ -4909,6 +4927,5 @@ SceneRoots:
   - {fileID: 165439347}
   - {fileID: 1077046522}
   - {fileID: 1917908149}
-  - {fileID: 395561888}
   - {fileID: 799787901}
   - {fileID: 1055618085}
