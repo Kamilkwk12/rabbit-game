@@ -1,12 +1,13 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueSystem : MonoBehaviour 
 {
 
     [SerializeField] private Canvas dialogueBox;
-    [SerializeField] private TextMeshProUGUI dialogueBoxTitle;
+    [SerializeField] public TextMeshProUGUI dialogueBoxTitle;
     [SerializeField] private TextMeshProUGUI dialogueContent;
 
     public bool isDialogueActive;
@@ -17,17 +18,23 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] private float typingSpeed = 0.1f;
 
+    private PlayerMovement player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
 
     public void StartDialogue(Dialogue dialogueInput)
     {
         currentDialogue = dialogueInput;
-
+         
         isDialogueActive = true;
         dialogueIndex = 0;
         if (dialogueBox) { 
             dialogueBox.enabled = true;
+            player.canMove = false;
         }
-
         StartCoroutine(TypeLine());
 
     }
@@ -74,6 +81,7 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueBox && dialogueContent) { 
             dialogueBox.enabled = false;
             dialogueContent.text = string.Empty;
+            player.canMove = true;
         }
     }
 }

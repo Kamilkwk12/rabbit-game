@@ -12,5 +12,6 @@ public class Kuba : MonoBehaviour
         dialogueSystem = GetComponent<DialogueSystem>();
 
         dialogueSystem.StartDialogue(dialogue);
+
     }
 }

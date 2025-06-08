@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -12,7 +13,7 @@ public class Quest : ScriptableObject
     public bool isQuestActive = false;
     public bool isQuestCompleted = false;
 
-    public string[] questConditions;
+    public List<string> questConditions;
 
     public string[] kubaDialogueLines;
 }

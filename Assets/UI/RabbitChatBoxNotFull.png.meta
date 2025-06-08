@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RabbitChatBoxNotFull_0: -3432585139400568020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

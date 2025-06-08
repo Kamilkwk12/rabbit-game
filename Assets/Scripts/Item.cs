@@ -6,14 +6,14 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] private string itemDescription;
 
     public Dialogue dialogue;
-    private PlayerMovement player;
 
     private DialogueSystem dialogueSystem;
-
+    public QuestItem questItem;
+    QuestManager questManager;
     private void Start()
     {
         dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        questManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestManager>();
     }
 
     public bool CanInteract()
@@ -25,13 +25,23 @@ public class Item : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        if (dialogueSystem.isDialogueActive)
+        if (dialogue)
         {
-            dialogueSystem.NextLine();
+            if (dialogueSystem.isDialogueActive)
+            {
+                dialogueSystem.NextLine();
+            }
+            else
+            {
+                dialogueSystem.StartDialogue(dialogue);
+                dialogueSystem.dialogueBoxTitle.text = itemName;
+            }
         }
-        else
+
+        if (questItem.questCondition != null && questItem.isQuestRelated)
         {
-            dialogueSystem.StartDialogue(dialogue);
+            questManager.CheckQuestConditions(0, questItem.questCondition);
         }
+
     }
 }

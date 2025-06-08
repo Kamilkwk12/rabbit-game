@@ -16,7 +16,7 @@ public class GameUI : MonoBehaviour
         _document = GetComponent<UIDocument>();
 
         _buildVersionLabel = _document.rootVisualElement.Q<Label>("BuildNumber");
-        _buildVersionLabel.text = $"Build: {alphaVersion}.0{Application.version}";
+        _buildVersionLabel.text = $"Build: {alphaVersion}.1{Application.version}";
     }
 }
 

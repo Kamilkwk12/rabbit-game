@@ -1,17 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-
+using System.Collections.Generic;
 public class QuestManager : MonoBehaviour
 {
-
-    public VisualTreeAsset questUITemplate;
-
-    public Quest[] questList;
-    private UIDocument gameUi; 
+    public Quest[] quests;
     public Quest currentQuest;
-    
-
+    private PlayerStatus playerStatus;
     [SerializeField] private Canvas questUi;
 
     [SerializeField] private TextMeshProUGUI questTitle;
@@ -19,18 +13,14 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        playerStatus = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         StartQuest(0);
     }
 
     public void StartQuest(int questID)
     {
-        foreach (Quest quest in questList) //deactivate all quests DEBUG !!!!!!!!!!
-        { 
-            quest.isQuestActive = false;
-            quest.isQuestCompleted = false;
-        }
 
-        currentQuest = questList[questID];
+        currentQuest = quests[questID];
 
         if (!currentQuest.isQuestCompleted)
         {
@@ -47,11 +37,20 @@ public class QuestManager : MonoBehaviour
 
     public void EndQuest(int questID)
     {
-        if (currentQuest == questList[questID])
+        if (currentQuest == quests[questID])
         {
             currentQuest.isQuestCompleted = true;
 
             questUi.enabled = false;
+        }
+    }
+
+    public void CheckQuestConditions(int questID, string givenCondition)
+    {
+        if (quests[questID].questConditions.Contains(givenCondition))
+        {
+            playerStatus.AddCondition(questID, givenCondition);
+            Debug.Log("Condition met");
         }
     }
 }

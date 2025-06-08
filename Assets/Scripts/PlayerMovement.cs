@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator _animator;
 
+    public bool canMove = true;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+
+        if (!canMove) { return; }
 
         _moveInput = context.ReadValue<Vector2>();
 
