@@ -467,8 +467,8 @@ GameObject:
   - component: {fileID: 123632881}
   - component: {fileID: 123632882}
   m_Layer: 0
-  m_Name: Item
-  m_TagString: Untagged
+  m_Name: Cupboard
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2372,8 +2372,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255360
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3887,8 +3887,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255360
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4381,7 +4381,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4463,9 +4463,10 @@ GameObject:
   - component: {fileID: 1766521398}
   - component: {fileID: 1766521397}
   - component: {fileID: 1766521396}
+  - component: {fileID: 1766521401}
   m_Layer: 0
-  m_Name: Item (2)
-  m_TagString: Untagged
+  m_Name: Oven
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4482,7 +4483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60a01525647ba0409cce8de0582aff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Owen
+  itemName: Oven
   itemDescription: 
   dialogue: {fileID: 0}
   questItem:
@@ -4623,6 +4624,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1766521401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766521395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a582f1925ac15249ad0f7e3f070651a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790410812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,8 +4650,8 @@ GameObject:
   - component: {fileID: 1790410814}
   - component: {fileID: 1790410813}
   m_Layer: 0
-  m_Name: Item (1)
-  m_TagString: Untagged
+  m_Name: Fridge
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5224,6 +5237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quests:
   - {fileID: 11400000, guid: 4d4cf9e3feef28446a7bfa8e4a923fac, type: 2}
+  - {fileID: 11400000, guid: 006383b3e11bc3d4e94c92039b06026a, type: 2}
   currentQuest: {fileID: 0}
   questUi: {fileID: 799787900}
   questTitle: {fileID: 73166519}

@@ -15,7 +15,7 @@ MonoBehaviour:
   questId: 0
   questName: Quest 1
   questDescription: Eat breakfast.
-  isQuestActive: 0
+  isQuestActive: 1
   isQuestCompleted: 0
   questConditions:
   - cupboard

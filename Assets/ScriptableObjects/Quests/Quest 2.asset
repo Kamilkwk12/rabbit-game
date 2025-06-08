@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a0080f5e00c49242bb19bbc83f7c97d, type: 3}
-  m_Name: Pendrive Override
+  m_Name: Quest 2
   m_EditorClassIdentifier: 
-  questId: 0
-  questName: Pendrive Override
-  questDescription: Override router's firewall with virused software on pendrive.
+  questId: 1
+  questName: Relaxation
+  questDescription: Suggestion, fixing the TV with HDMI cable to play games
   isQuestActive: 0
   isQuestCompleted: 0
-  questConditions: []
-  kubaDialogueLines:
-  - 'WHAT IN THE ACTUALL F*CK ARE YOU DOING??? THIS PENDRIVE SHOULDN''T BE HERE!!! '
+  questConditions:
+  - shelf
+  - HDMI
+  - TV
+  kubaDialogueLines: []

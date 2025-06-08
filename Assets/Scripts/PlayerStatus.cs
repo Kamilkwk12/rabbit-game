@@ -15,16 +15,8 @@ public class PlayerStatus : MonoBehaviour
         if (!questStatues[questId].conditions.Contains(condition))
         {
             questStatues[questId].conditions.Add(condition);
-            isQuestCompleted(questId);
+            questManager.isQuestCompleted(questId);
 
-        }
-    }
-
-    public void isQuestCompleted(int questId) 
-    {
-        if (questStatues[questId].conditions.SequenceEqual(questManager.currentQuest.questConditions)) {
-
-            questManager.EndQuest(questId);
         }
     }
 }

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 public class QuestManager : MonoBehaviour
 {
     public Quest[] quests;
@@ -10,10 +11,12 @@ public class QuestManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI questTitle;
     [SerializeField] private TextMeshProUGUI questInfo;
+    private QuestStatus[] questStatues;
 
     private void Start()
     {
         playerStatus = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
+        questStatues = playerStatus.questStatues;
         StartQuest(0);
     }
 
@@ -45,12 +48,20 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void CheckQuestConditions(int questID, string givenCondition)
+    public void CheckQuestConditions(string givenCondition)
     {
-        if (quests[questID].questConditions.Contains(givenCondition))
+        if (currentQuest.questConditions.Contains(givenCondition))
         {
-            playerStatus.AddCondition(questID, givenCondition);
+            playerStatus.AddCondition(currentQuest.questId, givenCondition);
             Debug.Log("Condition met");
+        }
+    }
+
+    public void isQuestCompleted(int questId)
+    {
+        if (questStatues[questId].conditions.SequenceEqual(currentQuest.questConditions))
+        {
+            EndQuest(questId);
         }
     }
 }

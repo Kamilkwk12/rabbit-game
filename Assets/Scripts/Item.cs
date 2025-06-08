@@ -38,10 +38,15 @@ public class Item : MonoBehaviour, IInteractable
             }
         }
 
+        UpdateQuest();
+
+    }
+
+    public void UpdateQuest()
+    {
         if (questItem.questCondition != null && questItem.isQuestRelated)
         {
-            questManager.CheckQuestConditions(0, questItem.questCondition);
+            questManager.CheckQuestConditions(questItem.questCondition);
         }
-
     }
 }
