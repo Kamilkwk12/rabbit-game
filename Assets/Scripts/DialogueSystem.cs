@@ -8,15 +8,15 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] private Canvas dialogueBox;
     [SerializeField] public TextMeshProUGUI dialogueBoxTitle;
-    [SerializeField] private TextMeshProUGUI dialogueContent;
+    [SerializeField] protected TextMeshProUGUI dialogueContent;
 
     public bool isDialogueActive;
-    private int dialogueIndex;
+    protected int dialogueIndex;
 
     public Dialogue currentDialogue;
-    private bool isTyping;
+    protected bool isTyping;
 
-    [SerializeField] private float typingSpeed = 0.1f;
+    [SerializeField] protected float typingSpeed = 0.1f;
 
     private PlayerMovement player;
 
@@ -39,7 +39,7 @@ public class DialogueSystem : MonoBehaviour
 
     }
      
-    IEnumerator TypeLine()
+    protected virtual IEnumerator TypeLine()
     {
         isTyping = true;
         dialogueContent.text = string.Empty;
@@ -53,7 +53,7 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
     }
 
-    public void NextLine()
+    public virtual void NextLine()
     {
         if (isTyping)
         {

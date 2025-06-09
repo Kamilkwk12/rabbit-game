@@ -1,11 +1,13 @@
 using UnityEngine;
-
+using System;
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private string itemName;
     [SerializeField] private string itemDescription;
 
     public Dialogue dialogue;
+
+    public static event Action onInteraction;
 
     private DialogueSystem dialogueSystem;
     private void Start()
@@ -21,6 +23,10 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (onInteraction != null)
+        {
+            onInteraction.Invoke();
+        }
 
         if (dialogue)
         {
@@ -30,8 +36,8 @@ public class Item : MonoBehaviour, IInteractable
             }
             else
             {
-                dialogueSystem.StartDialogue(dialogue);
                 dialogueSystem.dialogueBoxTitle.text = itemName;
+                dialogueSystem.StartDialogue(dialogue);
             }
         }
     }
