@@ -5,7 +5,7 @@ public class InteractionDetector : MonoBehaviour
 {
 
     public IInteractable _interactableInRange; //closest interactable
-
+    public GameObject interactableGameObject;
     private DialogueSystem dialogueSystem;
 
     private void Start()
@@ -27,6 +27,7 @@ public class InteractionDetector : MonoBehaviour
     {
         if (collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
         {
+            interactableGameObject = collision.gameObject;
             _interactableInRange = interactable;
             Debug.Log($"Interaction avaliable for {collision.name}");
         }
@@ -41,7 +42,8 @@ public class InteractionDetector : MonoBehaviour
             {
                 dialogueSystem.EndDialogue();
             }
-           _interactableInRange = null;
+            interactableGameObject = null;
+            _interactableInRange = null;
         }
     }
 }

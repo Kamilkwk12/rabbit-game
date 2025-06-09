@@ -1,6 +1,0 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/ComputerStyleSheet.uss?fileID=7433441132597879392&amp;guid=262b3f7156b974f49bd5ef8887737b49&amp;type=3#ComputerStyleSheet" />
-    <engine:VisualElement name="Icon" class="desktopIcon" style="background-image: none;">
-        <engine:Label text="IconName" name="IconCaption" style="bottom: -35px; position: absolute; right: 0; left: 1px; background-color: rgba(0, 0, 0, 0.26); -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
-    </engine:VisualElement>
-</engine:UXML>

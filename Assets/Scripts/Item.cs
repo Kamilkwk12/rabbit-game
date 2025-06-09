@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private string itemName;
@@ -7,13 +7,12 @@ public class Item : MonoBehaviour, IInteractable
 
     public Dialogue dialogue;
 
+    public static event Action onInteraction;
+
     private DialogueSystem dialogueSystem;
-    public QuestItem questItem;
-    QuestManager questManager;
     private void Start()
     {
         dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
-        questManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestManager>();
     }
 
     public bool CanInteract()
@@ -24,6 +23,10 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (onInteraction != null)
+        {
+            onInteraction.Invoke();
+        }
 
         if (dialogue)
         {
@@ -33,20 +36,9 @@ public class Item : MonoBehaviour, IInteractable
             }
             else
             {
-                dialogueSystem.StartDialogue(dialogue);
                 dialogueSystem.dialogueBoxTitle.text = itemName;
+                dialogueSystem.StartDialogue(dialogue);
             }
-        }
-
-        UpdateQuest();
-
-    }
-
-    public void UpdateQuest()
-    {
-        if (questItem.questCondition != null && questItem.isQuestRelated)
-        {
-            questManager.CheckQuestConditions(questItem.questCondition);
         }
     }
 }
