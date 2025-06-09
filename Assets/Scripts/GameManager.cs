@@ -29,20 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PendrivePickedUp()
-    {
-        Debug.Log("Pendrive picked up");
-        pendrivePickedUp = true;
-    }
-
-    public void UsePendrive()
-    {
-        Debug.Log("Pendrive plugged to router");
-        pendrivePickedUp = false;
-        pendrivePluggedToRouter = true;
-    }
-
-    public void ChangeGameState()
+    public void ChangeGameState() // TODO - rework world state change
     {
         virtualStateActive = !virtualStateActive;
 

@@ -8,12 +8,9 @@ public class Item : MonoBehaviour, IInteractable
     public Dialogue dialogue;
 
     private DialogueSystem dialogueSystem;
-    public QuestItem questItem;
-    QuestManager questManager;
     private void Start()
     {
         dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
-        questManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestManager>();
     }
 
     public bool CanInteract()
@@ -36,17 +33,6 @@ public class Item : MonoBehaviour, IInteractable
                 dialogueSystem.StartDialogue(dialogue);
                 dialogueSystem.dialogueBoxTitle.text = itemName;
             }
-        }
-
-        UpdateQuest();
-
-    }
-
-    public void UpdateQuest()
-    {
-        if (questItem.questCondition != null && questItem.isQuestRelated)
-        {
-            questManager.CheckQuestConditions(questItem.questCondition);
         }
     }
 }

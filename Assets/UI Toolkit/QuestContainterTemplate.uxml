@@ -1,6 +1,0 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:VisualElement name="QuestContainer" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0.53); min-width: 400px; min-height: 135px; position: absolute; top: 150px; left: auto; right: 0;">
-        <engine:Label text="Quest Title" name="QuestName" style="color: rgb(255, 255, 255); font-size: 21px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; -unity-font-style: bold;" />
-        <engine:Label text="Description" name="QuestDescription" style="flex-grow: 1; color: rgb(255, 255, 255); margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; font-size: 18px;" />
-    </engine:VisualElement>
-</engine:UXML>
