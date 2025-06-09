@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2895041e538fdb846b1c975e53a178f3, type: 3}
-  m_Name: KubaStartDialogue
+  m_Name: TVDialogue
   m_EditorClassIdentifier: 
-  dialogueType: 0
+  dialogueType: 1
   dialogueLines:
-  - '> Good Morning, Rabbit.'
-  - '> Your energy levels are stable. Your mission protocols are awaiting activation. '
-  - '> All systems are green. You are cleared to engage.'
+  - Rabbit connects the HDMI cable, but nothing happens...

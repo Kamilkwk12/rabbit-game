@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TVshelf_LeftBottom
+      name: TVshelf_Left
       rect:
         serializedVersion: 2
         x: 2
         y: 0
-        width: 82
+        width: 26
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -126,7 +126,7 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ba2e0b0beadd74960800000000000000
       internalID: 7586275839687320235
@@ -143,7 +143,7 @@ TextureImporter:
         width: 26
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,6 +152,28 @@ TextureImporter:
       bones: []
       spriteID: 6ba25a7e197e5714a94153d9521f8c65
       internalID: 1706296576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TVshelf_bottom
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 56
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29645d7df7e4e44a9b060eece2e65d3
+      internalID: 1845393536
       vertices: []
       indices: 
       edges: []
@@ -171,8 +193,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       TVshelf_2: -1396293680
-      TVshelf_LeftBottom: 7586275839687320235
+      TVshelf_Left: 7586275839687320235
       TVshelf_Right: 1706296576
+      TVshelf_bottom: 1845393536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

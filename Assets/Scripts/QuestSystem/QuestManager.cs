@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     private Dictionary<string, Quest> questMap;
-    [SerializeField] private string currentQuestIndex;
 
     [Header("QuestUI")]
     public TextMeshProUGUI questTitleUI;
@@ -81,7 +80,7 @@ public class QuestManager : MonoBehaviour
             quest.InstantiateCurrentQuestStep(transform);
         } else
         {
-            FinishQuest(quest.info.id);
+            GameEventsManager.instance.questEvents.FinishQuest(quest.info.id);
         }
     }
 
