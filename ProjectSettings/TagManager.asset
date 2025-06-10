@@ -10,6 +10,13 @@ TagManager:
   - Object
   - GameManager
   - Kuba
+  - QuestItem_TvShelf
+  - QuestItem_Oven
+  - QuestItem_Cupboard
+  - QuestItem_Fridge
+  - QuestItem_TV
+  - QuestManager
+  - Terminal
   layers:
   - Default
   - TransparentFX

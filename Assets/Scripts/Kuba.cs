@@ -5,22 +5,33 @@ public class Kuba : MonoBehaviour
     [SerializeField] KubaDialogues kubaDialogues;
     [Header("Kuba Dialogues")]
     [SerializeField] Dialogue Q1Dialogue; 
+    [SerializeField] Dialogue Q2Dialogue; 
     private void Start()
     {
-        GameEventsManager.instance.questEvents.onFinishQuest += EndQuest1Dialogue;
+        GameEventsManager.instance.questEvents.onFinishQuest += EndQuestDialogue;
     }
     private void OnDisable()
     {
-        GameEventsManager.instance.questEvents.onFinishQuest -= EndQuest1Dialogue;
+        GameEventsManager.instance.questEvents.onFinishQuest -= EndQuestDialogue;
     }
 
-    private void EndQuest1Dialogue(string id)
+    private void EndQuestDialogue(string id)
     {
-        if (id == "Quest1")
+        kubaDialogues.StopAllCoroutines();
+
+        switch (id)
         {
-            kubaDialogues.StopAllCoroutines();
-            kubaDialogues.StartDialogue(Q1Dialogue);
-            GameEventsManager.instance.questEvents.StartQuest("Quest2"); //starts quest 2
+            case "Quest1":
+                kubaDialogues.StartDialogue(Q1Dialogue);
+                GameEventsManager.instance.questEvents.StartQuest("Quest2"); 
+                break;
+            case "Quest2":
+                kubaDialogues.StartDialogue(Q2Dialogue);
+                GameEventsManager.instance.questEvents.StartQuest("Quest3"); 
+                break;
+
+            default:
+                break;
         }
     }
 }

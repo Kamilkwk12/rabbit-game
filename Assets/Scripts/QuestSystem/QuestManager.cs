@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
             GameEventsManager.instance.questEvents.QuestStateChange(quest);
         }
 
-        StartQuest("Quest1");
+        StartQuest("Quest2");
 
     }
 

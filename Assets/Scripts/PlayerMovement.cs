@@ -47,4 +47,13 @@ public class PlayerMovement : MonoBehaviour
             _animator.Play("WalkRight");
         }
     }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    } 
+    public void DisableMovement() 
+    { 
+        canMove = false; 
+    }
 }
