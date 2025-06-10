@@ -2282,7 +2282,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03392605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2292,7 +2292,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.14, y: 0.19}
+  m_Size: {x: 0.14, y: 0.122147895}
   m_EdgeRadius: 0
 --- !u!1 &395561884
 GameObject:
@@ -10799,7 +10799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f479cbb6c959f30459b265e28d9d4a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
+  isWorldReal: 1
   realWorld: {fileID: 704931457}
   virtualWorld: {fileID: 1928180}
   routerSpriteRenderer: {fileID: 1509286412}
@@ -11443,8 +11443,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2024655178
-BoxCollider2D:
+--- !u!60 &2024655178
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11477,7 +11477,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.40615803, y: -0.36802822}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11487,8 +11487,63 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.029115707, y: 0.8220258}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2099999, y: -1.005}
+      - {x: -1.1999999, y: -1.005}
+      - {x: -1.1999999, y: 0.005}
+      - {x: -0.71999997, y: 0.005}
+      - {x: -0.71999997, y: 1.005}
+      - {x: -1.2099999, y: 1.005}
+    - - {x: -0.71999997, y: 0.995}
+      - {x: 1.2099999, y: 0.995}
+      - {x: 1.2099999, y: 1.005}
+      - {x: -0.71999997, y: 1.005}
+    - - {x: 1.1999999, y: -1.005}
+      - {x: 1.2099999, y: -1.005}
+      - {x: 1.2099999, y: 0.995}
+      - {x: 1.1999999, y: 0.995}
+    - - {x: -1.1999999, y: -1.005}
+      - {x: 1.1999999, y: -1.005}
+      - {x: 1.1999999, y: -0.995}
+      - {x: -1.1999999, y: -0.995}
+    - - {x: 0.39, y: -0.775}
+      - {x: 0.42, y: -0.775}
+      - {x: 0.42, y: 0.044999998}
+      - {x: 0.39, y: 0.044999998}
+    - - {x: -0.71999997, y: -0.775}
+      - {x: -0.69, y: -0.775}
+      - {x: -0.69, y: 0.965}
+      - {x: -0.71999997, y: 0.965}
+    - - {x: -1.1999999, y: -0.995}
+      - {x: -1.17, y: -0.995}
+      - {x: -1.17, y: 0.005}
+      - {x: -1.1999999, y: 0.005}
+    - - {x: -1.17, y: -0.995}
+      - {x: 1.1999999, y: -0.995}
+      - {x: 1.1999999, y: -0.965}
+      - {x: -1.17, y: -0.965}
+    - - {x: 1.17, y: -0.965}
+      - {x: 1.1999999, y: -0.965}
+      - {x: 1.1999999, y: 0.995}
+      - {x: 1.17, y: 0.995}
+    - - {x: -0.71999997, y: 0.965}
+      - {x: 1.17, y: 0.965}
+      - {x: 1.17, y: 0.995}
+      - {x: -0.71999997, y: 0.995}
+    - - {x: 0.39, y: 0.21499999}
+      - {x: 0.42, y: 0.21499999}
+      - {x: 0.42, y: 0.965}
+      - {x: 0.39, y: 0.965}
+    - - {x: 0.42, y: 0.005}
+      - {x: 1.17, y: 0.005}
+      - {x: 1.17, y: 0.044999998}
+      - {x: 0.42, y: 0.044999998}
+    - - {x: 0.42, y: -0.475}
+      - {x: 1.17, y: -0.475}
+      - {x: 1.17, y: -0.465}
+      - {x: 0.42, y: -0.465}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2046917376
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,6 +96,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,12 +121,66 @@ TextureImporter:
         width: 242
         height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -121, y: -100.5}
+        - {x: -120, y: -100.5}
+        - {x: -120, y: 0.5}
+        - {x: -72, y: 0.5}
+        - {x: -72, y: 100.5}
+        - {x: -121, y: 100.5}
+      - - {x: -72, y: 99.5}
+        - {x: 121, y: 99.5}
+        - {x: 121, y: 100.5}
+        - {x: -72, y: 100.5}
+      - - {x: 120, y: -100.5}
+        - {x: 121, y: -100.5}
+        - {x: 121, y: 99.5}
+        - {x: 120, y: 99.5}
+      - - {x: -120, y: -100.5}
+        - {x: 120, y: -100.5}
+        - {x: 120, y: -99.5}
+        - {x: -120, y: -99.5}
+      - - {x: 39, y: -77.5}
+        - {x: 42, y: -77.5}
+        - {x: 42, y: 4.5}
+        - {x: 39, y: 4.5}
+      - - {x: -72, y: -77.5}
+        - {x: -69, y: -77.5}
+        - {x: -69, y: 96.5}
+        - {x: -72, y: 96.5}
+      - - {x: -120, y: -99.5}
+        - {x: -117, y: -99.5}
+        - {x: -117, y: 0.5}
+        - {x: -120, y: 0.5}
+      - - {x: -117, y: -99.5}
+        - {x: 120, y: -99.5}
+        - {x: 120, y: -96.5}
+        - {x: -117, y: -96.5}
+      - - {x: 117, y: -96.5}
+        - {x: 120, y: -96.5}
+        - {x: 120, y: 99.5}
+        - {x: 117, y: 99.5}
+      - - {x: -72, y: 96.5}
+        - {x: 117, y: 96.5}
+        - {x: 117, y: 99.5}
+        - {x: -72, y: 99.5}
+      - - {x: 39, y: 21.5}
+        - {x: 42, y: 21.5}
+        - {x: 42, y: 96.5}
+        - {x: 39, y: 96.5}
+      - - {x: 42, y: 0.5}
+        - {x: 117, y: 0.5}
+        - {x: 117, y: 4.5}
+        - {x: 42, y: 4.5}
+      - - {x: 42, y: -47.5}
+        - {x: 117, y: -47.5}
+        - {x: 117, y: -46.5}
+        - {x: 42, y: -46.5}
+      tessellationDetail: 0
       bones: []
       spriteID: f3d5e276e43bfa880800000000000000
       internalID: -8597456014307074753
@@ -125,7 +192,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5085bf3bbff87724aa0eb54d8813809a
     internalID: 0
     vertices: []
     indices: 

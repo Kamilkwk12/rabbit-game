@@ -18,6 +18,11 @@ TagManager:
   - QuestManager
   - Terminal
   - QuestItem_Toilet
+  - TerminalOutput
+  - Key
+  - Router
+  - Ending
+  - AudioController
   layers:
   - Default
   - TransparentFX
