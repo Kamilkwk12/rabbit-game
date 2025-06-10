@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d759fdcac4a4a4fac5d83b2b289083, type: 3}
   m_Name: LockedFile
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: 2362256246531956608, guid: 8f6af4804cb58d449bedce11046f601e, type: 3}
+  iconContent: "yy\xE1p=\x18\u0179#=\x18\u0179#=\x18\u0179#\u0141\xB8H#;\x18\u0179#{IP#9\x18\u0179#{Io#2\x18\u0179#{IR#9\x18\u0179#{In#4\x18\u0179#\u0155\xE7D#3\x18\u0179#\x88\u2020R#4\x18\u0179#=\x18\u017D#[\x1A\u0179#\x88\u2020o#M\x18\u0179#\x88\u2020n#\\\x19\u0179#\x88\u2020S#<\x18\u0179#0JT#<\x18\u0179#=\x18\x18#<\x18\u0179#"

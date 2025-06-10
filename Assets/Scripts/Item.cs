@@ -9,8 +9,8 @@ public class Item : MonoBehaviour, IInteractable
 
     public static event Action onInteraction;
 
-    private DialogueSystem dialogueSystem;
-    private void Start()
+    protected DialogueSystem dialogueSystem;
+    private void OnEnable()
     {
         dialogueSystem = GameObject.FindGameObjectWithTag("GameManager").GetComponent<DialogueSystem>();
     }

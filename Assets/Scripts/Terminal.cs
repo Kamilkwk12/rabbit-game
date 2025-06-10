@@ -10,7 +10,9 @@ public class Terminal : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI terminalOutput;
     [SerializeField] public TMP_InputField inputField;
-
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject desktop;
+    [SerializeField] private GameObject iconPrefab;
 
     [SerializeField] private PlayerMovement player;
 
@@ -47,7 +49,9 @@ public class Terminal : MonoBehaviour
                 break;
             case "y":
                 break;
-
+            case "switch":
+                gameManager.WorldSwitch();
+                break;
             default:
                 Log($"Command '{command}' not found");
                 inputField.text = string.Empty;
@@ -59,5 +63,12 @@ public class Terminal : MonoBehaviour
     public void Log(string log)
     {
         terminalOutput.text = terminalOutput.text + Environment.NewLine + log;
+    }
+
+    public void AddIcon(DesktopIcon iconData)
+    {
+        GameObject icon = Instantiate(iconPrefab, desktop.transform);
+        icon.GetComponent<Image>().sprite = iconData.iconSprite;
+        icon.GetComponent<Icon>().content = iconData.iconContent;
     }
 }

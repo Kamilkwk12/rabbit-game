@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class InteractionQuestStep : QuestStep
@@ -6,12 +7,27 @@ public class InteractionQuestStep : QuestStep
     [SerializeField] protected Dialogue alternativeDialogue;
 
     [Header("Add tag to this prefab matching targeted game object")]
-    [SerializeField] protected GameObject targetObject;
+    [SerializeField] protected GameObject[] objects;
+    protected GameObject targetObject;
     protected Item targetObjectInteraction;
 
     private void OnEnable()
     {
-        targetObject = GameObject.FindGameObjectWithTag(gameObject.tag);
+        objects = GameObject.FindGameObjectsWithTag(gameObject.tag);
+
+        if (objects.Length > 1)
+        {
+            foreach (GameObject obj in objects) {
+                if (obj != gameObject) {
+                    targetObject = obj; 
+                    break;  
+                }
+            }
+        } else
+        {
+            targetObject = objects.First();
+        }
+
         targetObjectInteraction = targetObject.GetComponent<Item>();
         Item.onInteraction += Interact;
     }

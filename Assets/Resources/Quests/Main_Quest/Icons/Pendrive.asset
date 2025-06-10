@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d759fdcac4a4a4fac5d83b2b289083, type: 3}
   m_Name: Pendrive
   m_EditorClassIdentifier: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: -999950526331781902, guid: 3b3816760f0c53848bb490e740a2ce99, type: 3}
+  iconContent: 'Connect this pendrive to your router. '

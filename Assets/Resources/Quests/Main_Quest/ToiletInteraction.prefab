@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6928717207082867706}
-  - component: {fileID: 8429603388680246605}
+  - component: {fileID: -1063471395051428217}
   m_Layer: 0
   m_Name: ToiletInteraction
   m_TagString: QuestItem_Toilet
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8429603388680246605
+--- !u!114 &-1063471395051428217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5267401974100764039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8802c7eb62d0d3e4bbe1bb7de8a5a31e, type: 3}
+  m_Script: {fileID: 11500000, guid: 55ad18158abebe3408d442f86f10c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFinished: 0
   alternativeDialogue: {fileID: 11400000, guid: 08771086e89aa894aa70caab13090857, type: 2}
   targetObject: {fileID: 0}
+  desktopIcons:
+  - {fileID: 11400000, guid: d4c5da699a4c80b499397cb23ea5900c, type: 2}
+  - {fileID: 11400000, guid: af1faf08770bc55488b36ce3abf04235, type: 2}
