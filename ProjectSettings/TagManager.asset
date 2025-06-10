@@ -17,6 +17,7 @@ TagManager:
   - QuestItem_TV
   - QuestManager
   - Terminal
+  - QuestItem_Toilet
   layers:
   - Default
   - TransparentFX
