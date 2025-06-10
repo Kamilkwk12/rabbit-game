@@ -8,7 +8,6 @@ public class TerminalQuestStep : QuestStep
     [SerializeField] private Terminal terminal;
     private Item tv; 
     private bool wasTvStarted = false;
-    private bool isGamePlayed = false;
 
     [SerializeField] private Dialogue tvGameDialogue;
     private void OnEnable()
@@ -32,7 +31,6 @@ public class TerminalQuestStep : QuestStep
         }
         else if ((terminal.inputField.text == "yes" || terminal.inputField.text == "y" || terminal.inputField.text == "Y") && wasTvStarted)
         {
-            isGamePlayed = true;
             tv.dialogue = tvGameDialogue;
             terminal.inputField.text = string.Empty;
             FinishQuestStep();

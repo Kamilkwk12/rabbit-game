@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+
         realWorld.SetActive(true);
         virtualWorld.SetActive(false);
     }
